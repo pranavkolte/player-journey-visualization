@@ -2,7 +2,7 @@
 
 A browser tool for level designers to see how players actually move, fight, loot and die on LILA BLACK's three maps, built from 5 days of production telemetry (Feb 10–14, 2026).
 
-**Live tool:** `<add deployed URL here>`  ·  Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)  ·  Findings: [INSIGHTS.md](INSIGHTS.md)
+**Live tool:** https://pranavkolte.github.io/player-journey-visualization/  ·  Architecture: [ARCHITECTURE.md](ARCHITECTURE.md)  ·  Findings: [INSIGHTS.md](INSIGHTS.md)
 
 ## What a designer can do
 
