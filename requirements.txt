@@ -1,0 +1,7 @@
+# Only needed to rebuild web/data from the raw parquet files (the committed web/ folder runs without them).
+pandas
+pyarrow
+numpy
+pillow
+# Only needed for tests/e2e_browser.py
+playwright

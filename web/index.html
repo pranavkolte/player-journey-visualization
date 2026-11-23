@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LILA BLACK Player Journeys</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside id="sidebar">
+    <h1>Player Journeys <small>LILA BLACK · Feb 10–14, 2026</small></h1>
+    <button id="copy-link-button" type="button">Copy link to this view</button>
+    <section id="summary" aria-live="polite"></section>
+    <section id="drilldown" hidden></section>
+
+    <section>
+      <h2>Filter matches</h2>
+      <label>Map <select id="map-select"></select></label>
+      <label>Day <select id="date-select"></select></label>
+      <label>How the player's run ended <select id="outcome-select"></select></label>
+      <label>Single match (replay paths) <select id="match-select"></select></label>
+    </section>
+
+    <section>
+      <h2>Heatmap <label class="inline"><input type="checkbox" id="heat-toggle" checked> show</label></h2>
+      <div id="layer-radios"></div>
+      <label>Measure
+        <select id="metric-select">
+          <option value="count">Total events (density)</option>
+          <option value="perRun">Rate per run that visited the area</option>
+        </select>
+      </label>
+      <p class="note" id="metric-note"></p>
+    </section>
+
+    <section>
+      <h2>Event markers</h2>
+      <div id="marker-checks"></div>
+      <p class="note players-key"><span class="swatch human"></span> Human path &nbsp; <span class="swatch bot"></span> Bot path (single match replay)</p>
+    </section>
+  </aside>
+
+  <main>
+    <div id="stage">
+      <canvas id="map-canvas"></canvas>
+      <div id="tooltip" hidden></div>
+      <div id="heat-legend"></div>
+      <p id="hint">Scroll to zoom · drag to pan · hover an area for numbers</p>
+      <p id="empty-message" hidden>No matches for these filters.<br>Try another day or outcome.</p>
+      <div id="loading">Loading…</div>
+    </div>
+    <div id="timeline">
+      <button id="play-button" type="button">▶ Play</button>
+      <label class="inline">Speed <select id="speed-select"></select></label>
+      <label>Match time: from <output id="from-label"></output><input type="range" id="from-slider" min="0" value="0"></label>
+      <label>to <output id="to-label"></output><input type="range" id="to-slider" min="0"></label>
+      <button id="reset-view-button" type="button">Reset zoom</button>
+    </div>
+  </main>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

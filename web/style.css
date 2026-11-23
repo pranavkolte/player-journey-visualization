@@ -1,0 +1,42 @@
+:root {
+  --bg: #12141a; --panel: #1b1e27; --panel-border: #2c3040; --text: #e8eaf0; --muted: #98a0b3; --accent: #4cc9f0; --bot: #ff9f1c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; height: 100vh; display: grid; grid-template-columns: 340px 1fr; background: var(--bg); color: var(--text); font: 14px/1.4 system-ui, sans-serif; }
+#sidebar { background: var(--panel); border-right: 1px solid var(--panel-border); padding: 16px; overflow-y: auto; }
+h1 { font-size: 18px; margin: 0 0 12px; } h1 small { display: block; font-weight: 400; color: var(--muted); font-size: 12px; margin-top: 2px; }
+h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 8px; display: flex; justify-content: space-between; align-items: center; }
+section { padding: 10px 0; border-top: 1px solid var(--panel-border); }
+label { display: block; margin-bottom: 8px; color: var(--muted); font-size: 12px; }
+label.inline { display: inline-flex; gap: 6px; align-items: center; margin: 0; text-transform: none; letter-spacing: 0; }
+select, button { width: 100%; margin-top: 3px; padding: 6px 8px; background: var(--bg); color: var(--text); border: 1px solid var(--panel-border); border-radius: 6px; font: inherit; }
+button { cursor: pointer; margin: 0; } button:hover, select:hover { border-color: var(--accent); }
+input[type=range] { width: 100%; accent-color: var(--accent); margin: 4px 0 0; }
+output { float: right; color: var(--text); font-variant-numeric: tabular-nums; }
+.choice { display: flex; gap: 8px; align-items: center; color: var(--text); font-size: 13px; margin-bottom: 3px; cursor: pointer; }
+.note { color: var(--muted); font-size: 12px; margin: 6px 0 0; }
+.glyph { width: 15px; height: 15px; flex: none; }
+.swatch { display: inline-block; width: 18px; height: 4px; border-radius: 2px; vertical-align: middle; }
+.swatch.human { background: #4cc9f0; } .swatch.bot { background: var(--bot); }
+#summary { font-size: 13px; } #summary b { color: var(--accent); }
+main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+#stage { position: relative; flex: 1; min-height: 0; overflow: hidden; }
+#map-canvas { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; } #map-canvas.dragging { cursor: grabbing; }
+#tooltip { position: absolute; pointer-events: none; background: rgba(18,20,26,.95); border: 1px solid var(--panel-border); border-radius: 6px; padding: 6px 8px; font-size: 12px; line-height: 1.5; white-space: nowrap; }
+#heat-legend { position: absolute; left: 12px; top: 12px; background: rgba(18,20,26,.85); border: 1px solid var(--panel-border); border-radius: 6px; padding: 8px 10px; font-size: 12px; max-width: 320px; }
+#heat-legend .ramp { height: 8px; border-radius: 4px; margin: 4px 0; background: linear-gradient(90deg, rgb(40,11,84), rgb(120,28,109), rgb(187,55,84), rgb(237,105,37), rgb(251,180,26), rgb(252,255,164)); }
+#heat-legend .scale { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); }
+#hint { position: absolute; right: 12px; top: 12px; margin: 0; font-size: 12px; color: var(--muted); background: rgba(18,20,26,.7); padding: 4px 8px; border-radius: 6px; }
+#empty-message { position: absolute; inset: 0; margin: 0; display: grid; place-content: center; text-align: center; background: rgba(18,20,26,.8); font-size: 16px; }
+#loading { position: absolute; inset: 0; display: grid; place-items: center; background: var(--bg); }
+#timeline { display: grid; grid-template-columns: 90px auto 1fr 1fr 100px; gap: 14px; align-items: end; background: var(--panel); border-top: 1px solid var(--panel-border); padding: 10px 14px; }
+#timeline label { margin: 0; } #timeline select { width: auto; }
+#drilldown h2 button { width: auto; padding: 0 6px; margin: 0; } #drilldown p button { width: auto; display: inline; padding: 1px 8px; margin-left: 6px; }
+.drill-list { max-height: 220px; overflow-y: auto; display: grid; gap: 3px; margin-top: 6px; }
+.drill-row { text-align: left; font-size: 12px; padding: 4px 6px; }
+[hidden] { display: none !important; }
+@media (max-width: 800px) {
+  body { grid-template-columns: 1fr; grid-template-rows: auto 80vh; height: auto; }
+  #sidebar { border-right: 0; }
+  #timeline { grid-template-columns: 1fr 1fr; }
+}
