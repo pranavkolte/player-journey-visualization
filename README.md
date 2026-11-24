@@ -45,7 +45,7 @@ python3 -m http.server --directory web 8000     # then open http://localhost:800
 
 ## Rebuild the data (optional)
 
-Put the provided `player_data/` folder (with `February_10…14/` and `minimaps/`) in the repo root, then:
+The provided `player_data/` folder (`February_10…14/` and `minimaps/`) is committed in the repo root, so just run:
 
 ```bash
 python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
